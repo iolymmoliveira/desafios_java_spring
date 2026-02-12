@@ -36,11 +36,16 @@ public class ProductService {
     }
 
     @Transactional
-    public ProductDTO upadate(Long id, ProductDTO dto) {
+    public ProductDTO update(Long id, ProductDTO dto) {
         Product entity = productRepository.getReferenceById(id);
         copyProductDtoToEntity(dto, entity);
         entity = productRepository.save(entity);
         return new ProductDTO(entity);
+    }
+
+    @Transactional
+    public void delete(Long id) {
+        productRepository.deleteById(id);
     }
 
     private void copyProductDtoToEntity(ProductDTO dto, Product entity) {
