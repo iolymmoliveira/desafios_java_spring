@@ -1,6 +1,7 @@
 package com.iolyoliveira.desafio05.dto;
 
 import com.iolyoliveira.desafio05.entities.Product;
+import jakarta.validation.constraints.*;
 
 public class ProductDTO {
 
@@ -33,14 +34,19 @@ public class ProductDTO {
         return id;
     }
 
+    @NotBlank(message = "Campo requerido")
+    @Size(min = 3, max = 80, message = "Nome precisa ter de 3 a 80 caracteres")
     public String getName() {
         return name;
     }
 
+    @NotBlank(message = "Campo requerido")
+    @Size(min = 10, message = "Descrição precisa ter no mínimo 10 caracteres")
     public String getDescription() {
         return description;
     }
 
+    @Positive(message = "O preço deve ser positivo")
     public Double getPrice() {
         return price;
     }
