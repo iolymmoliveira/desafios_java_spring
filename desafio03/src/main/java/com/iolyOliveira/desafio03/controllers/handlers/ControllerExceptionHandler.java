@@ -4,6 +4,7 @@ import com.iolyOliveira.desafio03.DTO.CustomError;
 import com.iolyOliveira.desafio03.DTO.ValidationError;
 import com.iolyOliveira.desafio03.services.exceptions.ResourceNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -40,7 +41,7 @@ public class ControllerExceptionHandler {
         ValidationError err = new ValidationError(
                 Instant.now(),
                 status.value(),
-                "Invalid Data",
+                "Dados inválidos",
                 request.getRequestURI()
         );
 
@@ -48,6 +49,27 @@ public class ControllerExceptionHandler {
             err.addFieldError(f.getField(), f.getDefaultMessage());
         }
 
+        return ResponseEntity.status(status).body(err);
+    }
+
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity<CustomError> dataIntegrityViolation(
+            DataIntegrityViolationException e,
+            HttpServletRequest request
+    ) {
+        HttpStatus status = HttpStatus.CONFLICT;
+
+        String message = "Violação de integridade de dados";
+        if (e.getMessage().contains("cpf")) {
+            message = "CPF já cadastrado";
+        }
+
+        CustomError err = new CustomError(
+                Instant.now(),
+                status.value(),
+                message,
+                request.getRequestURI()
+        );
         return ResponseEntity.status(status).body(err);
     }
 }

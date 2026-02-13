@@ -1,13 +1,12 @@
 package com.iolyOliveira.desafio03.DTO;
 
-import org.springframework.validation.FieldError;
-
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ValidationError extends CustomError {
 
-    private List<FieldMessage> fieldErrors;
+    private List<FieldMessage> fieldErrors = new ArrayList<>();
 
     public ValidationError(Instant timestamp, Integer status, String error, String path) {
         super(timestamp, status, error, path);
