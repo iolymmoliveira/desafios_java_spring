@@ -1,6 +1,5 @@
 package com.iolyOliveira.desafio03.entities;
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
