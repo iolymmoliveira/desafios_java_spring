@@ -667,8 +667,8 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 **Ioly Oliveira**
 
-- GitHub: [@seu-usuario](https://github.com/iolymmoliveira)
-- LinkedIn: [Seu Nome](https://www.linkedin.com/in/iolymmoliveira/)
+- GitHub: [@iolymmoliveira](https://github.com/iolymmoliveira)
+- LinkedIn: [iolymmoliveira](https://www.linkedin.com/in/iolymmoliveira/)
 - Email: iolymmoliveira@gmail.com
 
 ---
