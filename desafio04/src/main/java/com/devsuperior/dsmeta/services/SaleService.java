@@ -30,21 +30,20 @@ public class SaleService {
 	}
 
     public Page<SaleReportDTO> getReport(String minDate, String maxDate, String name, Pageable pageable) {
-
-        LocalDate today = LocalDate.ofInstant(Instant.now(), ZoneId.systemDefault());
-        LocalDate max = (maxDate == null || maxDate.isEmpty()) ? today : LocalDate.parse(maxDate);
-        LocalDate min = (minDate == null || minDate.isEmpty()) ? max.minusYears(1L) : LocalDate.parse(minDate);
+        LocalDate[] dates = resolveDateRange(minDate, maxDate);
         name = (name == null) ? "" : name;
-
-        return repository.searchReport(min, max, name, pageable);
+        return repository.searchReport(dates[0], dates[1], name, pageable);
     }
 
     public List<SaleSummaryDTO> getSummary(String minDate, String maxDate) {
+        LocalDate[] dates = resolveDateRange(minDate, maxDate);
+        return repository.searchSummary(dates[0], dates[1]);
+    }
 
+    private LocalDate[] resolveDateRange(String minDate, String maxDate) {
         LocalDate today = LocalDate.ofInstant(Instant.now(), ZoneId.systemDefault());
         LocalDate max = (maxDate == null || maxDate.isEmpty()) ? today : LocalDate.parse(maxDate);
         LocalDate min = (minDate == null || minDate.isEmpty()) ? max.minusYears(1L) : LocalDate.parse(minDate);
-
-        return repository.searchSummary(min, max);
+        return new LocalDate[]{min, max};
     }
 }
