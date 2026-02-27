@@ -3,6 +3,7 @@ package com.iolyoliveira.desafio05.dto;
 import com.iolyoliveira.desafio05.entities.Order;
 import com.iolyoliveira.desafio05.entities.OrderItem;
 import com.iolyoliveira.desafio05.entities.OrderStatus;
+import jakarta.validation.constraints.NotEmpty;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -15,6 +16,8 @@ public class OrderDTO {
     private OrderStatus status;
     private ClientDTO client;
     private PaymentDTO payment;
+
+    @NotEmpty(message = "Deve ter pelo menos um item")
     private List<OrderItemDTO> items = new ArrayList<>();
 
     public OrderDTO() {
