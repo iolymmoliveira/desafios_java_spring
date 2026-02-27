@@ -1,6 +1,7 @@
 package com.iolyoliveira.desafio05.controllers;
 
 import com.iolyoliveira.desafio05.dto.ProductDTO;
+import com.iolyoliveira.desafio05.dto.ProductMinDTO;
 import com.iolyoliveira.desafio05.services.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class ProductController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<ProductDTO>> findAll(
+    public ResponseEntity<Page<ProductMinDTO>> findAll(
             @RequestParam(name = "name", defaultValue = "") String name,
             Pageable pageable)
     {

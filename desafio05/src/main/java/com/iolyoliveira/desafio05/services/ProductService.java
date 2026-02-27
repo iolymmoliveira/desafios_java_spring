@@ -1,6 +1,7 @@
 package com.iolyoliveira.desafio05.services;
 
 import com.iolyoliveira.desafio05.dto.ProductDTO;
+import com.iolyoliveira.desafio05.dto.ProductMinDTO;
 import com.iolyoliveira.desafio05.entities.Product;
 import com.iolyoliveira.desafio05.repositories.ProductRepository;
 import com.iolyoliveira.desafio05.services.exceptions.DatabaseException;
@@ -29,9 +30,9 @@ public class ProductService {
     }
 
     @Transactional(readOnly = true)
-    public Page<ProductDTO> findAll(String name, Pageable pageable) {
+    public Page<ProductMinDTO> findAll(String name, Pageable pageable) {
         Page<Product> listProduct = productRepository.searchByName(name, pageable);
-        return listProduct.map(ProductDTO::new);
+        return listProduct.map(ProductMinDTO::new);
     }
 
     @Transactional
