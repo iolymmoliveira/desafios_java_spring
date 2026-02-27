@@ -1,7 +1,11 @@
 package com.iolyoliveira.desafio05.dto;
 
+import com.iolyoliveira.desafio05.entities.Category;
 import com.iolyoliveira.desafio05.entities.Product;
 import jakarta.validation.constraints.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProductDTO {
 
@@ -19,6 +23,9 @@ public class ProductDTO {
     private Double price;
     private String imgUrl;
 
+    @NotEmpty(message = "Deve ter pelo menos uma categoria")
+    private List<CategoryDTO> categories = new ArrayList<>();
+
     public ProductDTO() {
     }
 
@@ -30,12 +37,15 @@ public class ProductDTO {
         this.imgUrl = imgUrl;
     }
 
-    public ProductDTO(Product product) {
-        id = product.getId();
-        name = product.getName();
-        description = product.getDescription();
-        price = product.getPrice();
-        imgUrl = product.getImgUrl();
+    public ProductDTO(Product entity) {
+        id = entity.getId();
+        name = entity.getName();
+        description = entity.getDescription();
+        price = entity.getPrice();
+        imgUrl = entity.getImgUrl();
+        for (Category category : entity.getCategories()) {
+            categories.add(new CategoryDTO(category));
+        }
     }
 
     public Long getId() {
@@ -56,5 +66,9 @@ public class ProductDTO {
 
     public String getImgUrl() {
         return imgUrl;
+    }
+
+    public List<CategoryDTO> getCategories() {
+        return categories;
     }
 }

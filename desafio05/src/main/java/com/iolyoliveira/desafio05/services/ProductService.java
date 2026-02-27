@@ -1,7 +1,9 @@
 package com.iolyoliveira.desafio05.services;
 
+import com.iolyoliveira.desafio05.dto.CategoryDTO;
 import com.iolyoliveira.desafio05.dto.ProductDTO;
 import com.iolyoliveira.desafio05.dto.ProductMinDTO;
+import com.iolyoliveira.desafio05.entities.Category;
 import com.iolyoliveira.desafio05.entities.Product;
 import com.iolyoliveira.desafio05.repositories.ProductRepository;
 import com.iolyoliveira.desafio05.services.exceptions.DatabaseException;
@@ -75,5 +77,12 @@ public class ProductService {
         entity.setDescription(dto.getDescription());
         entity.setPrice(dto.getPrice());
         entity.setImgUrl(dto.getImgUrl());
+
+        entity.getCategories().clear();
+        for (CategoryDTO categoryDTO : dto.getCategories()) {
+            Category cat = new Category();
+            cat.setId(categoryDTO.getId());
+            entity.getCategories().add(cat);
+        }
     }
 }
