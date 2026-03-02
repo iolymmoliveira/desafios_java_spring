@@ -1,0 +1,21 @@
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Freddie Mercury', '12345678901', 15000.0, '1946-09-05', 0);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Brian Johnson', '98765432100', 12500.0, '1947-10-05', 2);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Robert Plant', '45612378910', 14200.0, '1948-08-20', 3);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Axl Rose', '32165498700', 13800.0, '1962-02-06', 2);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Steven Tyler', '74185296300', 16500.0, '1948-03-26', 4);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Bruce Dickinson', '15935748600', 11000.0, '1958-08-07', 3);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Kurt Cobain', '25836914700', 9800.0, '1967-02-20', 1);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Bono Vox', '36925814700', 17500.0, '1960-05-10', 4);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Mick Jagger', '95175385200', 18900.0, '1943-07-26', 8);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Eddie Vedder', '75315945600', 10800.0, '1964-12-23', 2);
+
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Cyndi Lauper', '11122233344', 13500.0, '1953-06-22', 1);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Joan Jett', '22233344455', 11200.0, '1958-09-22', 0);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Debbie Harry', '33344455566', 14800.0, '1945-07-01', 0);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Pat Benatar', '44455566677', 12700.0, '1953-01-10', 2);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Stevie Nicks', '55566677788', 16200.0, '1948-05-26', 0);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Ann Wilson', '66677788899', 13900.0, '1950-06-19', 2);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Janis Joplin', '77788899900', 10500.0, '1943-01-19', 0);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Tina Turner', '88899900011', 18500.0, '1939-11-26', 4);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Chrissie Hynde', '99900011122', 12300.0, '1951-09-07', 2);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Patti Smith', '00011122233', 11800.0, '1946-12-30', 2);
