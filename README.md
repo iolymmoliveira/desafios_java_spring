@@ -82,12 +82,15 @@ Transacionalidade: Garantia de atomicidade em operações complexas através da 
 ## 📦 Como Obter o Monorepo
 Para acessar todos os desafios e o código-fonte completo:
 
-```bash
-# Clone o repositório completo
-git clone [https://github.com/iolymmoliveira/desafios_java_spring.git](https://github.com/iolymmoliveira/desafios_java_spring.git)
 
-# Navegue entre as pastas dos desafios
-cd desafios_java_spring
+1. **Clone o repositório:**
+```bash
+git clone git@github.com:iolymmoliveira/desafios_java_spring.git
+```
+
+2. **Navegue entre as pastas dos desafios**
+```
+cd desafio05
 ```
 
 ---
